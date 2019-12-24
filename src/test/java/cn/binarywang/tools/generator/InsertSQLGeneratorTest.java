@@ -12,7 +12,7 @@ import com.google.inject.name.Named;
  * @author Binary Wang
  */
 @Test
-@Guice(modules = TestConfigModule.class)
+@Guice(modules = TestConfigExtendModule.class)
 public class InsertSQLGeneratorTest {
     private InsertSQLGenerator generator;
 
@@ -41,7 +41,7 @@ public class InsertSQLGeneratorTest {
         }
 
         this.generator = new InsertSQLGenerator(this.url, this.username,
-            this.password, "data_order_ext");
+            this.password, "sku");
     }
 
     @AfterTest
@@ -65,5 +65,6 @@ public class InsertSQLGeneratorTest {
     public void testGenerateParams() {
         System.err.println(this.generator.generateParams());
     }
+
 
 }

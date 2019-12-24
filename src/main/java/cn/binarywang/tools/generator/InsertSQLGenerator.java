@@ -59,7 +59,7 @@ public class InsertSQLGenerator {
         List<String> columns = Lists.newArrayList();
         try (PreparedStatement ps = this.con
             .prepareStatement("select * from " + this.tableName);
-                ResultSet rs = ps.executeQuery();) {
+                ResultSet rs = ps.executeQuery()) {
 
             ResultSetMetaData rsm = rs.getMetaData();
             for (int i = 1; i <= rsm.getColumnCount(); i++) {
